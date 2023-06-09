@@ -1,23 +1,20 @@
-# PHP Web Server with Docker 🐳
+# Website Penjualan Online 🐳
 
 <p align="center">
-    <img src="./docker/img/images.png" alt="docker+php+mysql">
+    <img src="./docker/img/images.jpg" alt="docker+php+mongo">
 </p>
 
-## Introduction
+## Persyaratan Sistem
 
-Build a simple php application development environment with docker-compose.
+Pastikan sistem Anda memenuhi persyaratan berikut sebelum melanjutkan:
 
-## Requirement
-- Docker ^19.*
+- MongoDB Compass / Studio 3T telah terinstal dan berjalan di mesin Anda. Aplikasi ini berfungsi untuk management data pada website penjualan online.
 
-## Installation
+## Mau jalanin pake apa?
+- [HTDOCS](./readme-htdocs.md) 
+- [DOCKER](./readme-docker.md)
 
-1. click [Use this template](https://github.com/agprsty-utdi/penjualan-online/generate)
-2. git clone & change directory
-3. execute the following command
-
-```bash
-$ docker compose up -d --build
-```
-5. show application in [http://localhost](http://localhost)
+## Contoh CRUD untuk Consumer
+<p align="center">
+    <img src="./docker/img/consumer.png" alt="consumer">
+</p>
