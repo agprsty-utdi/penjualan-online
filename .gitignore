@@ -1,0 +1,8 @@
+# Editor
+.vscode
+/materi
+
+# Container file
+/docker/mysql/*
+!/docker/mysql/.gitkeep
+/database
