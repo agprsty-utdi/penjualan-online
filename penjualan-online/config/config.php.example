@@ -1,0 +1,10 @@
+<?php
+
+return [
+    'host' => 'localhost',
+    'port' => 27017,
+    'username' => 'admin',
+    'password' => 'admin',
+    'authSource' => 'admin',
+    'database' => 'penjualan_online',
+];

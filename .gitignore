@@ -3,6 +3,8 @@
 /materi
 
 # Container file
-/docker/mysql/*
-!/docker/mysql/.gitkeep
-/database
+/docker/mongo/*
+!/docker/mongo/.gitkeep
+
+# Config
+/penjualan-online/config/*.php
