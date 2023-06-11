@@ -22,13 +22,13 @@ COPY --from=composer:2.4 /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www/html
 
 # Copy composer.json and composer.lock files
-COPY ./penjualan-online/composer.* ./
+COPY ./src/composer.* ./
 
 # Install dependencies
 RUN composer install --prefer-dist --no-dev --no-scripts --no-progress --no-interaction
 
 # Copy existing application directory contents
-COPY ./penjualan-online /var/www/html
+COPY ./src /var/www/html
 
 # Menjalankan perintah Composer untuk memuat autoload dan menjalankan skrip
 RUN composer dump-autoload --optimize

@@ -7,4 +7,5 @@
 !/docker/mongo/.gitkeep
 
 # Config
-/penjualan-online/config/*.php
+/src/vendor
+/src/config/*.php

@@ -20,14 +20,14 @@ git clone https://github.com/agprsty-utdi/penjualan-online.git
 cd penjualan-online
 ```
 
-3. Salin file `.config/config.php.example` ke `.config/config.php`:
+3. Salin file `.src/config/config.php.example` ke `.src/config/config.php`:
 ```bash
-cp .config/config.php.example .config/config.php
+cp .src/config/config.php.example .src/config/config.php
 
-edit .config/config.php pada key `host` dengan nilai `mongo`
+udah `.src/config/config.php` pada kunci `host` dengan nilai `mongo`
 ```
 
-4. execute the following command
+4. Jalankan perintah berikut
 
 ```bash
 docker compose up -d --build

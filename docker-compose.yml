@@ -14,7 +14,7 @@ services:
       - "80:80"
     volumes:
       - /var/www/html/vendor
-      - ./penjualan-online:/var/www/html
+      - ./src:/var/www/html
     depends_on:
       - mongo
     networks:

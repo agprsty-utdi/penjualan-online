@@ -6,8 +6,9 @@ Dokumen ini memberikan langkah-langkah untuk menginstal dan menjalankan aplikasi
 
 Pastikan sistem Anda memenuhi persyaratan berikut sebelum melanjutkan:
 
-- PHPMYADMIN telah terinstal dan berjalan di mesin Anda.
 - PHP telah terinstal di mesin Anda.
+- PHPMYADMIN telah terinstal dan berjalan di mesin Anda.
+- MongoDB telah terinstal dan berjalan di mesin Anda.
 - Komposer (Composer) telah terinstal di mesin Anda.
 
 ### Langkah-langkah Instalasi
@@ -22,18 +23,25 @@ git clone https://github.com/agprsty-utdi/penjualan-online.git
 cd penjualan-online
 ```
 
-3. Pindahkan direktori proyek `penjualan-online` ke dalam program `HTDOCS` anda. 
+3. Salin seluruh file yang berada dalam direktori `src` 
+  
+4. Kemudian pergi ke dalam direktori `HTDOCS` anda, buat direktori baru bernama `penjualan-online` jika sudah. Taruh seluruh file yang sebelumnya di salin masukkan kedalam direktori `penjualan-online`
 
-4. Salin file `.config/config.php.example` ke `.config/config.php`:
+5. Salin file `.config/config.php.example` ke `.config/config.php`:
 ```bash
 cp .config/config.php.example .config/config.php
 ```
 
-5. Sesuaikan config dengan environment MongoDB anda!
+6. Sesuaikan `config/config.php` dengan environment MongoDB anda
 
-6. Jalankan perintah Composer untuk menginstal dependensi proyek:
+7. Jalankan perintah berikut untuk menginstal dependensi proyek:
 ```bash
 composer install
 ```
 
-7. Jika proses sudah selesai dan berhasil, maka buka laman [http://localhost](http://localhost).
+8. Jalankan perintah berikut untuk mentrigger file autoload pada dependensi proyek:
+```bash
+composer dump-autoload --optimize
+```
+
+9. Jika proses sudah selesai dan berhasil, maka buka laman [http://localhost](http://localhost).
