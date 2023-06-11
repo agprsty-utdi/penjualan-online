@@ -25,7 +25,7 @@ function stringToObjectID($id)
 
 function now()
 {
-    return round(microtime(true) * 1000);
+    return (int) round(microtime(true) * 1000);
 }
 
 function epochToHumanDate($epochTime)
@@ -34,4 +34,8 @@ function epochToHumanDate($epochTime)
     $datetime = DateTime::createFromFormat('U.u', $epochTime / 1000);
     $datetime->setTimezone($timezone);
     return $datetime->format('Y-m-d H:i:s');
+}
+
+function formatRp($amount) {
+    return 'Rp. ' . number_format($amount, 0, ',', '.');
 }

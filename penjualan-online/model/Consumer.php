@@ -15,14 +15,14 @@ class Consumer
     public $deleted_at;
 
     public function __construct(
-      $name = '', 
-      $email = '', 
-      $address = '', 
-      $phoneNumber = '', 
-      $gender = '',
-      $created_at = '',
-      $updated_at = '',
-      $deleted_at = ''
+      string $name = '', 
+      string $email = '', 
+      string $address = '', 
+      string $phoneNumber = '', 
+      int $gender = 0,
+      int $created_at = 0,
+      int $updated_at = 0,
+      int $deleted_at = 0
     ) {
         $this->_id = generateObjectId();
         $this->name = $name;

@@ -1,7 +1,7 @@
 <?php
 
 require_once '../utils.php';
-require_once 'repository/ConsumerRepository.php';
+require_once '../repository/ConsumerRepository.php';
 
 $repository = new ConsumerRepository();
 $consumers = $repository->getAll();

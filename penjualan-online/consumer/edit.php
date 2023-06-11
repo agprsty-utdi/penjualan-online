@@ -1,8 +1,8 @@
 <?php
 
 require_once('../utils.php');
-require_once('repository/ConsumerRepository.php');
-require_once('model/Consumer.php');
+require_once('../model/Consumer.php');
+require_once('../repository/ConsumerRepository.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id'];

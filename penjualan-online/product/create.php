@@ -1,32 +1,30 @@
 <?php
 
 require_once '../utils.php';
-require_once '../model/Consumer.php';
-require_once '../repository/ConsumerRepository.php';
+require_once '../model/Product.php';
+require_once '../repository/ProductRepository.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'];
-    $email = $_POST['email'];
-    $address = $_POST['address'];
-    $phoneNumber = $_POST['phoneNumber'];
-    $gender = $_POST['gender'];
+    $stock = $_POST['stock'];
+    $price = $_POST['price'];
 
     // Validasi data input 
-    if (empty($name) || empty($email) || empty($address) || empty($phoneNumber)) {
+    if (empty($name) || empty($price) || empty($stock)) {
         $error = "All fields are required.";
         header("Location: create.php?error=" . urlencode($error));
         exit();
     }
 
-    // Buat objek Consumer baru
+    // Buat objek Product baru
     $created_at = now();
-    $consumer = new Consumer($name, $email, $address, $phoneNumber, $gender);
-    $consumer->created_at = $created_at;
-    $consumer->updated_at = $created_at;
+    $product = new Product($name, $price, $stock);
+    $product->created_at = $created_at;
+    $product->updated_at = $created_at;
 
     // Simpan data konsumen ke dalam repository
-    $repository = new ConsumerRepository();
-    $repository->create($consumer);
+    $repository = new ProductRepository();
+    $repository->create($product);
 
     // Redirect ke halaman index atau tampilkan pesan sukses
     header("Location: index.php");
@@ -39,11 +37,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Create Consumer</title>
+  <title>Create Product</title>
 </head>
 
 <body>
-  <h1>Create Consumer</h1>
+  <h1>Create Product</h1>
 
   <?php
     // Tangkap pesan error jika ada
@@ -63,34 +61,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </td>
       </tr>
       <tr>
-        <td>email</td>
+        <td>Stock</td>
         <td>:</td>
         <td>
-          <input type="email" name="email" required>
+          <input type="number" name="stock" required>
         </td>
       </tr>
       <tr>
-        <td>Phone Number</td>
+        <td>price</td>
         <td>:</td>
         <td>
-          <input type="tel" name="phoneNumber" required>
-        </td>
-      </tr>
-      <tr>
-        <td>Gender</td>
-        <td>:</td>
-        <td>
-          <select name="gender">
-            <option value="0">Male</option>
-            <option value="1">Famale</option>
-          </select>
-        </td>
-      </tr>
-      <tr>
-        <td>Address</td>
-        <td>:</td>
-        <td>
-          <textarea name="address" rows="3" required></textarea>
+          <input type="number" name="price" required>
         </td>
       </tr>
       <tr>

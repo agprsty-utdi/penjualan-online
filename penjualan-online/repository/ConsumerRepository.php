@@ -2,7 +2,7 @@
 
 require_once '../connect.php';
 require_once '../utils.php';
-require_once 'model/Consumer.php';
+require_once '../model/Consumer.php';
 
 class ConsumerRepository
 {
